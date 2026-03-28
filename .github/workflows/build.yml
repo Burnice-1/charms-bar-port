@@ -11,22 +11,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '6.0.x'
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
 
-      - name: Restore
-        run: dotnet restore
+      - name: Restore NuGet
+        run: nuget restore
 
       - name: Build
-        run: dotnet build --configuration Release
-
-      - name: Publish
-        run: dotnet publish -c Release -o out
+        run: msbuild charms-bar-port.sln /p:Configuration=Release
 
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
           name: charms-bar
-          path: out
+          path: |
+            **/bin/Release/**
