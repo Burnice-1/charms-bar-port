@@ -1,3 +1,6 @@
+<b>Please note that this repository is a fork I built for my own personal use and is not the official version. </b>
+[The following repository contains the official build](https://github.com/Icepenguins101/charms-bar-port)
+
 <p align="center">
 <img id="charmsbarPort" src="resource/logo.png"/>
 </p>
