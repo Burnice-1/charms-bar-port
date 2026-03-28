@@ -15,10 +15,10 @@ jobs:
         uses: microsoft/setup-msbuild@v2
 
       - name: Restore NuGet
-        run: nuget restore CharmsBar.sln
+        run: nuget restore src/CharmsBar.sln
 
       - name: Build
-        run: msbuild CharmsBar.sln /p:Configuration=Release
+        run: msbuild src/CharmsBar.sln /p:Configuration=Release
 
       - name: Upload
         uses: actions/upload-artifact@v4
